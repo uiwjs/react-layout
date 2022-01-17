@@ -1,9 +1,9 @@
-Layout
+Layout 布局
 ===
 
-Handling the overall layout of a page.
+协助进行页面级整体布局。
 
-> ⚠️ Note: Implemented with flex layout, please pay attention to [browser compatibility](http://caniuse.com/#search=flex) issues.
+> ⚠️ 注意：采用 flex 布局实现，请注意[浏览器兼容性](http://caniuse.com/#search=flex)问题。
 <!--rehype:style=border-left: 8px solid #ffe564;background-color: #ffe56440;padding: 12px 16px;-->
 
 <!--rehype-->
@@ -14,9 +14,9 @@ import Layout from '@uiw/react-layout';
 const { Header, Footer, Sider, Content } = Layout;
 ```
 
-## Basic Usage
+## 基本用法
 
-<!--rehype:bgWhite=true&codeSandbox=true&codePen=true&noScroll=true-->
+<!--rehype:bgWhite=true&codeSandbox=true&codePen=true-->
 ```jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -35,7 +35,7 @@ function Demo() {
         <Sider collapsed={collapsed} style={stylSider}>Sider</Sider>
         <Layout>
           <Header style={stylHeader}>
-            <button onClick={() => setCollapsed(!collapsed)}>{collapsed ? '>>' : '<<'}</button>
+            <button onClick={() => setCollapsed(!collapsed)}>{collapsed ? '展开 Sider' : '缩进 Sider'}</button>
           </Header>
           <Content style={stylConten}>Content</Content>
           <Footer>Footer</Footer>
@@ -57,7 +57,7 @@ function Demo() {
         <Footer>Footer</Footer>
       </Layout>
 
-      <Layout>
+      <Layout style={{ marginBottom: 20 }}>
         <Header style={stylHeader}>Header</Header>
         <Layout>
           <Content style={stylConten}>Content</Content>
@@ -71,6 +71,7 @@ function Demo() {
 
 ReactDOM.render(<Demo />, _mount_);
 ```
+
 
 ## Layout
 

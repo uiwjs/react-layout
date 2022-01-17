@@ -3,7 +3,7 @@
   "scripts": {
     "⬇️⬇️⬇️⬇️⬇️ package ⬇️⬇️⬇️⬇️⬇️": "▼▼▼▼▼ package ▼▼▼▼▼",
     "build": "lerna exec --scope @uiw/* -- tsbb build && npm run css:build && npm run css:build:dist",
-    "watch": "lerna exec \"tsbb watch\" --scope @uiw/* && npm run css:watch",
+    "watch": "lerna exec \"tsbb watch\" --scope @uiw/* & npm run css:watch",
     "css:build": "lerna exec --scope @uiw/* -- compile-less -d src -o esm",
     "css:watch": "lerna exec --scope @uiw/* -- compile-less -d src -o esm --watch",
     "css:build:dist": "lerna exec --scope @uiw/* -- compile-less -d src -o lib --combine=dist.css",

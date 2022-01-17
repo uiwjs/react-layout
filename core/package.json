@@ -1,12 +1,12 @@
 {
-  "name": "@uiw/react-monorepo-template",
-  "version": "1.0.0",
-  "description": "React Monorepo Template.",
+  "name": "@uiw/react-layout",
+  "version": "4.9.9",
+  "description": "React layout component.",
   "author": "Kenny Wong <wowohoo@qq.com>",
-  "homepage": "https://uiwjs.github.io/react-monorepo-template",
+  "homepage": "https://uiwjs.github.io/react-layout",
   "repository": {
     "type": "git",
-    "url": "https://github.com/uiwjs/react-monorepo-template.git"
+    "url": "https://github.com/uiwjs/react-layout.git"
   },
   "license": "MIT",
   "main": "./cjs/index.js",
@@ -21,14 +21,13 @@
     "access": "public"
   },
   "keywords": [
-    "react-monorepo-template",
-    "react.js",
-    "react",
-    "template",
-    "monorepo",
-    "monorepo-template",
+    "layout",
+    "react-layout",
+    "design",
     "uiw",
     "uiw-react",
+    "react.js",
+    "react",
     "react-component",
     "component",
     "components",
@@ -36,7 +35,9 @@
     "css",
     "uikit",
     "react-ui",
-    "framework"
+    "framework",
+    "front-end",
+    "frontend"
   ],
   "peerDependencies": {
     "react": ">=16.9.0",
