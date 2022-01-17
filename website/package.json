@@ -1,6 +1,6 @@
 {
   "name": "website",
-  "version": "1.0.0",
+  "version": "4.9.10",
   "description": "Simple React package development project example template.",
   "private": true,
   "scripts": {
@@ -8,9 +8,9 @@
     "build": "kkt build"
   },
   "dependencies": {
-    "@uiw/react-layout": "4.9.9",
-    "@uiw/react-github-corners": "1.5.3",
     "@uiw/react-code-preview": "4.0.2",
+    "@uiw/react-github-corners": "1.5.3",
+    "@uiw/react-layout": "4.9.10",
     "@uiw/react-markdown-preview": "3.4.7",
     "react": "17.0.2",
     "react-dom": "17.0.2"

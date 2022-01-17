@@ -1,6 +1,6 @@
 {
   "name": "@uiw/react-layout",
-  "version": "4.9.9",
+  "version": "4.9.10",
   "description": "React layout component.",
   "author": "Kenny Wong <wowohoo@qq.com>",
   "homepage": "https://uiwjs.github.io/react-layout",
@@ -43,7 +43,6 @@
     "react": ">=16.9.0",
     "react-dom": ">=16.9.0"
   },
-  "dependencies": {},
   "devDependencies": {
     "@babel/runtime": "7.16.7",
     "@types/react": "17.0.38",
