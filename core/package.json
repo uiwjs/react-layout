@@ -1,6 +1,6 @@
 {
   "name": "@uiw/react-layout",
-  "version": "4.9.10",
+  "version": "4.9.11",
   "description": "React components that handle the overall layout of the page.",
   "author": "Kenny Wong <wowohoo@qq.com>",
   "homepage": "https://uiwjs.github.io/react-layout",
