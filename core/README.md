@@ -25,7 +25,7 @@ const { Header, Footer, Sider, Content } = Layout;
 ```jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Layout } from '@uiw/react-layout';
+import Layout from '@uiw/react-layout';
 const { Header, Footer, Sider, Content } = Layout;
 
 const stylHeader = { color: '#fff' }
