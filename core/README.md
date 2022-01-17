@@ -74,27 +74,27 @@ ReactDOM.render(<Demo />, _mount_);
 
 ## Layout
 
-布局容器，其下可嵌套 `Header` `Sider` `Content` `Footer` 或 `Layout` 本身，可以放在任何父容器中。
+The layout wrapper, in which `Header` `Sider` `Content` `Footer` or `Layout` itself can be nested, and can be placed in any parent container.
 
-* `Header`：顶部布局，自带默认样式，其下可嵌套任何元素，只能放在 `Layout` 中。
-* `Sider`：侧边栏，自带默认样式及基本功能，其下可嵌套任何元素，只能放在 `Layout` 中。
-* `Content`：内容部分，自带默认样式，其下可嵌套任何元素，只能放在 `Layout` 中。
-* `Footer`：底部布局，自带默认样式，其下可嵌套任何元素，只能放在 `Layout` 中。
+- `Header`: The top layout with the default style, in which any element can be nested, and must be placed in `Layout`.
+- `Sider`: The sidebar with default style and basic functions, in which any element can be nested, and must be placed in `Layout`.
+- `Content`: The content layout with the default style, in which any element can be nested, and must be placed in `Layout`.
+- `Footer`: The bottom layout with the default style, in which any element can be nested, and must be placed in `Layout`.
 
-| 参数 | 说明 | 类型 | 默认值 |
+| Property | Description | Type | Default |
 |--------- |-------- |--------- |-------- |
-| className | 容器 className | string | - |
-| style | 指定样式 | CSSProperties | - |
-| theme | 主题颜色 | `light`、`dark` | `dark` |
-| hasSider | 表示子元素里有 Sider，一般不用指定。可用于服务端渲染时避免样式闪动 | boolean | - |
+| className | Container className | string | - |
+| style | To customize the styles | CSSProperties | - |
+| theme | Color theme of the sidebar | `light`、`dark` | `dark` |
+| hasSider | hasSider	Whether contain Sider in children, don't have to assign it normally. Useful in ssr avoid style flickering | boolean | - |
 
 ## Layout.Sider
 
-| 参数 | 说明 | 类型 | 默认值 |
+| Property | Description | Type | Default |
 |--------- |-------- |--------- |-------- |
-| className | 容器 className | string | - |
-| style | 指定样式 | CSSProperties | - |
-| collapsed | 当前收起状态 | boolean | - |
-| collapsedWidth | 收缩宽度，设置为 `0` | boolean | `80` |
-| width | 宽度 | number/string | 200 |
+| className | Container className | string | - |
+| style | To customize the styles | CSSProperties | - |
+| collapsed | To set the current status | boolean | - |
+| collapsedWidth | Width of the collapsed sidebar, by setting to 0 a special trigger will appear | boolean | `80` |
+| width | Width of the sidebar | number/string | 200 |
 
