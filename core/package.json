@@ -1,0 +1,53 @@
+{
+  "name": "@uiw/react-monorepo-template",
+  "version": "1.0.0",
+  "description": "React Monorepo Template.",
+  "author": "Kenny Wong <wowohoo@qq.com>",
+  "homepage": "https://uiwjs.github.io/react-monorepo-template",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uiwjs/react-monorepo-template.git"
+  },
+  "license": "MIT",
+  "main": "./cjs/index.js",
+  "module": "./esm/index.js",
+  "files": [
+    "dist.css",
+    "cjs",
+    "esm",
+    "src"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "react-monorepo-template",
+    "react.js",
+    "react",
+    "template",
+    "monorepo",
+    "monorepo-template",
+    "uiw",
+    "uiw-react",
+    "react-component",
+    "component",
+    "components",
+    "ui",
+    "css",
+    "uikit",
+    "react-ui",
+    "framework"
+  ],
+  "peerDependencies": {
+    "react": ">=16.9.0",
+    "react-dom": ">=16.9.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/runtime": "7.16.7",
+    "@types/react": "17.0.38",
+    "@types/react-dom": "17.0.11",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  }
+}
