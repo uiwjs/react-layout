@@ -8,7 +8,7 @@
     "build": "kkt build"
   },
   "dependencies": {
-    "@uiw/react-code-preview": "4.0.2",
+    "@uiw/react-code-preview": "4.0.3",
     "@uiw/react-github-corners": "1.5.3",
     "@uiw/react-layout": "4.9.12",
     "@uiw/react-markdown-preview": "3.4.7",
