@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import MarkdownPreview from '@uiw/react-markdown-preview';
 import Code from './Code';
-import Footer from './Footer';
 import styles from './index.module.less';
 
 export interface CreatePageProps<T> extends React.HTMLAttributes<HTMLDivElement> {
@@ -76,9 +75,6 @@ export default function CreatePage<T>(props: CreatePageProps<T>) {
           },
         }}
       />
-      <div className={styles.docinfo}>
-        <Footer path={path} />
-      </div>
     </div>
   );
 }
