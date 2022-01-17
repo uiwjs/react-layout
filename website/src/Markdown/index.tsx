@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import MarkdownPreview from '@uiw/react-markdown-preview';
 import Code from './Code';
+import pkg from '@uiw/react-layout/package.json';
 import styles from './index.module.less';
 
 export interface CreatePageProps<T> extends React.HTMLAttributes<HTMLDivElement> {
@@ -23,10 +24,6 @@ const getCodeStr = (data: any[] = [], code: string = '') => {
 export default function CreatePage<T>(props: CreatePageProps<T>) {
   const { renderPage, dependencies, path, ...other } = props;
   const [mdStr, setMdStr] = useState('');
-
-  // @ts-ignore
-  // eslint-disable-next-line
-  const version = VERSION || '2.0.0';
   useEffect(() => {
     if (renderPage) {
       renderPage()
@@ -70,8 +67,9 @@ export default function CreatePage<T>(props: CreatePageProps<T>) {
             if (Object.keys(config).filter((name) => config[name] !== undefined).length === 0) {
               return <code {...props} />;
             }
-            console.log('>>>', getCodeStr(node.children));
-            return <Code version={version} code={getCodeStr(node.children)} dependencies={dependencies} {...config} />;
+            return (
+              <Code version={pkg.version} code={getCodeStr(node.children)} dependencies={dependencies} {...config} />
+            );
           },
         }}
       />
