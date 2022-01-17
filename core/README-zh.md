@@ -99,3 +99,6 @@ ReactDOM.render(<Demo />, _mount_);
 | collapsedWidth | 收缩宽度，设置为 `0` | boolean | `80` |
 | width | 宽度 | number/string | 200 |
 
+### License
+
+Licensed under the MIT License.
