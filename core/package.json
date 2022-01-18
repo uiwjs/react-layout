@@ -12,6 +12,8 @@
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
   "files": [
+    "README-zh.md",
+    "README.md",
     "dist.css",
     "cjs",
     "esm",
