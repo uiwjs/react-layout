@@ -1,6 +1,11 @@
 Layout 布局
 ===
 
+[![NPM Downloads](https://img.shields.io/npm/dm/@uiw/react-layout.svg?style=flat)](https://www.npmjs.com/package/@uiw/react-layout)
+[![Build & Deploy](https://github.com/uiwjs/react-layout/actions/workflows/ci.yml/badge.svg)](https://github.com/uiwjs/react-layout/actions/workflows/ci.yml)
+[![Open in unpkg](https://img.shields.io/badge/Open%20in-unpkg-blue)](https://uiwjs.github.io/npm-unpkg/#/pkg/@uiw/react-layout/file/README.md)
+[![npm version](https://img.shields.io/npm/v/@uiw/react-layout.svg)](https://www.npmjs.com/package/@uiw/react-layout)
+
 协助进行页面级整体布局。
 
 > ⚠️ 注意：采用 flex 布局实现，请注意[浏览器兼容性](http://caniuse.com/#search=flex)问题。
