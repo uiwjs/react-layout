@@ -5,6 +5,7 @@ Layout 布局
 [![Build & Deploy](https://github.com/uiwjs/react-layout/actions/workflows/ci.yml/badge.svg)](https://github.com/uiwjs/react-layout/actions/workflows/ci.yml)
 [![Open in unpkg](https://img.shields.io/badge/Open%20in-unpkg-blue)](https://uiwjs.github.io/npm-unpkg/#/pkg/@uiw/react-layout/file/README.md)
 [![npm version](https://img.shields.io/npm/v/@uiw/react-layout.svg)](https://www.npmjs.com/package/@uiw/react-layout)
+[![Coverage Status](https://uiwjs.github.io/react-layout/badges.svg)](https://uiwjs.github.io/react-layout/coverage/lcov-report/)
 
 协助进行页面级整体布局。
 
@@ -29,8 +30,8 @@ import Layout from '@uiw/react-layout';
 const { Header, Footer, Sider, Content } = Layout;
 
 const stylHeader = { color: '#fff' }
-const stylSider = { background: '#484a4e', color: '#fff', lineHeight: `120px`, textAlign: 'center' }
-const stylConten = { textAlign: 'center', background: 'rgba(16, 142, 233, 1)', minHeight: 120, lineHeight: '120px', color: '#fff' }
+const stylSider = { background: '#484a4e', color: '#fff', display: 'flex', justifyContent: 'center', alignItems: 'center' }
+const stylConten = { background: '#108ee9', minHeight: 120, display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#fff' }
 
 function Demo() {
   const [collapsed, setCollapsed] = React.useState(false)
@@ -70,7 +71,7 @@ import Layout from '@uiw/react-layout';
 const { Header, Footer, Sider, Content } = Layout;
 
 const stylHeader = { color: '#fff' }
-const stylConten = { textAlign: 'center', background: 'rgba(16, 142, 233, 1)', minHeight: 120, lineHeight: '120px', color: '#fff' }
+const stylConten = { background: '#108ee9', minHeight: 120, display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#fff' }
 
 function Demo() {
   const [collapsed, setCollapsed] = React.useState(false)
@@ -96,8 +97,8 @@ import Layout from '@uiw/react-layout';
 const { Header, Footer, Sider, Content } = Layout;
 
 const stylHeader = { color: '#fff' }
-const stylSider = { background: '#484a4e', color: '#fff', lineHeight: `120px`, textAlign: 'center' }
-const stylConten = { textAlign: 'center', background: 'rgba(16, 142, 233, 1)', minHeight: 120, lineHeight: '120px', color: '#fff' }
+const stylSider = { background: '#484a4e', color: '#fff', display: 'flex', justifyContent: 'center', alignItems: 'center' }
+const stylConten = { background: '#108ee9', minHeight: 120, display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#fff' }
 
 function Demo() {
   const [collapsed, setCollapsed] = React.useState(false)
@@ -117,8 +118,6 @@ function Demo() {
 
 ReactDOM.render(<Demo />, _mount_);
 ```
-
-
 
 ## Layout
 

@@ -30,8 +30,8 @@ import Layout from '@uiw/react-layout';
 const { Header, Footer, Sider, Content } = Layout;
 
 const stylHeader = { color: '#fff' }
-const stylSider = { background: '#484a4e', color: '#fff', lineHeight: `120px`, textAlign: 'center' }
-const stylConten = { textAlign: 'center', background: 'rgba(16, 142, 233, 1)', minHeight: 120, lineHeight: '120px', color: '#fff' }
+const stylSider = { background: '#484a4e', color: '#fff', display: 'flex', justifyContent: 'center', alignItems: 'center' }
+const stylConten = { background: '#108ee9', minHeight: 120, display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#fff' }
 
 function Demo() {
   const [collapsed, setCollapsed] = React.useState(false)
@@ -71,7 +71,7 @@ import Layout from '@uiw/react-layout';
 const { Header, Footer, Sider, Content } = Layout;
 
 const stylHeader = { color: '#fff' }
-const stylConten = { textAlign: 'center', background: 'rgba(16, 142, 233, 1)', minHeight: 120, lineHeight: '120px', color: '#fff' }
+const stylConten = { background: '#108ee9', minHeight: 120, display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#fff' }
 
 function Demo() {
   const [collapsed, setCollapsed] = React.useState(false)
@@ -97,8 +97,8 @@ import Layout from '@uiw/react-layout';
 const { Header, Footer, Sider, Content } = Layout;
 
 const stylHeader = { color: '#fff' }
-const stylSider = { background: '#484a4e', color: '#fff', lineHeight: `120px`, textAlign: 'center' }
-const stylConten = { textAlign: 'center', background: 'rgba(16, 142, 233, 1)', minHeight: 120, lineHeight: '120px', color: '#fff' }
+const stylSider = { background: '#484a4e', color: '#fff', display: 'flex', justifyContent: 'center', alignItems: 'center' }
+const stylConten = { background: '#108ee9', minHeight: 120, display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#fff' }
 
 function Demo() {
   const [collapsed, setCollapsed] = React.useState(false)
