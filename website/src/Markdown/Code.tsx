@@ -39,27 +39,25 @@ export default function Code({ version, dependencies, codePen, codeSandbox, ...o
           content: (props.code || '').replace('_mount_', 'document.getElementById("container")'),
         },
         '.kktrc.js': {
-          content: `import webpack from "webpack";\nimport lessModules from "@kkt/less-modules";\nexport default (conf, env, options) => {\nconf = lessModules(conf, env, options);\nreturn conf;\n};`,
+          content: `import lessModules from "@kkt/less-modules";\nexport default (conf, env, options) => {\n  conf = lessModules(conf, env, options);\n  return conf;\n};`,
         },
         'package.json': {
           content: {
             name: 'uiw-demo',
             description: `uiw v${version} - demo`,
             dependencies: {
-              react: 'latest',
-              'react-dom': 'latest',
+              react: '^17.0.2',
+              'react-dom': '^17.0.2',
               uiw: 'latest',
             },
             devDependencies: {
-              '@kkt/less-modules': '6.9.0',
-              kkt: '6.9.0',
-              typescript: '4.1.3',
+              '@kkt/less-modules': '~7.1.1',
+              kkt: '~7.1.5',
             },
             license: 'MIT',
             scripts: {
               start: 'kkt start',
               build: 'kkt build',
-              test: 'kkt test --env=jsdom',
             },
             browserslist: ['>0.2%', 'not dead', 'not ie <= 11', 'not op_mini all'],
           },
