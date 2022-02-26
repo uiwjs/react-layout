@@ -15,6 +15,7 @@
     "README-zh.md",
     "README.md",
     "dist.css",
+    "dist",
     "cjs",
     "esm",
     "src"
