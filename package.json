@@ -28,6 +28,7 @@
     ]
   },
   "jest": {
+    "collectCoverageFrom": ["<rootDir>/core/src/**/*.{js,jsx,ts,tsx}"],
     "testMatch": [
       "<rootDir>/test/*.{ts,tsx}"
     ],
