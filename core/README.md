@@ -145,6 +145,16 @@ The layout wrapper, in which `Header` `Sider` `Content` `Footer` or `Layout` its
 | collapsedWidth | Width of the collapsed sidebar, by setting to 0 a special trigger will appear | boolean | `80` |
 | width | Width of the sidebar | number/string | 200 |
 
+## Contributors
+
+As always, thanks to our amazing contributors!
+
+<a href="https://github.com/uiwjs/react-layout/graphs/contributors">
+  <img src="https://uiwjs.github.io/react-layout/CONTRIBUTORS.svg" />
+</a>
+
+Made with [github-action-contributors](https://github.com/jaywcjlove/github-action-contributors).
+
 ### License
 
 Licensed under the MIT License.
