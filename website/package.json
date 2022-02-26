@@ -1,6 +1,6 @@
 {
   "name": "website",
-  "version": "4.9.14",
+  "version": "4.9.15",
   "description": "Simple React package development project example template.",
   "private": true,
   "scripts": {
@@ -10,7 +10,7 @@
   "dependencies": {
     "@uiw/react-code-preview": "4.0.5",
     "@uiw/react-github-corners": "1.5.3",
-    "@uiw/react-layout": "4.9.14",
+    "@uiw/react-layout": "4.9.15",
     "@uiw/react-markdown-preview": "3.4.7",
     "react": "17.0.2",
     "react-dom": "17.0.2"
