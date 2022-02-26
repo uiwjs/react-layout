@@ -42,7 +42,7 @@ test('renders react-layout', () => {
     const [collapsed, setCollapsed] = React.useState(false)
     return (
       <Layout data-testid="layout" style={{ marginBottom: 20 }}>
-        <Sider collapsed={collapsed}>Sider Menu</Sider>
+        <Sider width={300} collapsed={collapsed}>Sider Menu</Sider>
         <Layout>
           <Header>
             <button onClick={() => setCollapsed(!collapsed)}>ClickSiderButton{collapsed ? '展开 Sider' : '缩进 Sider'}</button>
@@ -56,9 +56,9 @@ test('renders react-layout', () => {
   render(<Demo />);
   const siderElement = screen.getByText(/Sider Menu/i);
   expect(siderElement.className).toEqual('w-layout-sider');
-  expect(siderElement.style.width).toEqual('200px');
-  expect(siderElement.style.minWidth).toEqual('200px');
-  expect(siderElement.style.maxWidth).toEqual('200px');
+  expect(siderElement.style.width).toEqual('300px');
+  expect(siderElement.style.minWidth).toEqual('300px');
+  expect(siderElement.style.maxWidth).toEqual('300px');
 
   fireEvent.click(screen.getByText(/ClickSiderButton/i));
   expect(siderElement.style.width).toEqual('80px');
@@ -68,6 +68,8 @@ test('renders react-layout', () => {
 
   const element = screen.getByTestId('layout');
   expect(element.className).toEqual('w-layout w-layout-has-sider');
+  fireEvent.click(screen.getByText(/ClickSiderButton/i));
+  expect(siderElement.style.width).toEqual('300px');
 });
 
 test('renders react-layout hasSider props', () => {
