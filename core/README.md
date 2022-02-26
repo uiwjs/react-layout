@@ -38,23 +38,6 @@ function Demo() {
   return (
     <div>
       <Layout style={{ marginBottom: 20 }}>
-        <Sider collapsed={collapsed} style={stylSider}>Sider</Sider>
-        <Layout>
-          <Header style={stylHeader}>
-            <button onClick={() => setCollapsed(!collapsed)}>{collapsed ? '>>' : '<<'}</button>
-          </Header>
-          <Content style={stylConten}>Content</Content>
-          <Footer>Footer</Footer>
-        </Layout>
-      </Layout>
-
-      <Layout style={{ marginBottom: 20 }}>
-        <Header style={stylHeader}>Header</Header>
-        <Content style={stylConten}>Content</Content>
-        <Footer>Footer</Footer>
-      </Layout>
-
-      <Layout style={{ marginBottom: 20 }}>
         <Header style={stylHeader}>Header</Header>
         <Layout>
           <Sider style={stylSider}>Sider</Sider>
@@ -72,6 +55,64 @@ function Demo() {
         <Footer>Footer</Footer>
       </Layout>
     </div>
+  );
+}
+
+ReactDOM.render(<Demo />, _mount_);
+```
+
+## Layout top-middle-bottom
+
+<!--rehype:bgWhite=true&codeSandbox=true&codePen=true&noScroll=true-->
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Layout from '@uiw/react-layout';
+const { Header, Footer, Sider, Content } = Layout;
+
+const stylHeader = { color: '#fff' }
+const stylConten = { textAlign: 'center', background: 'rgba(16, 142, 233, 1)', minHeight: 120, lineHeight: '120px', color: '#fff' }
+
+function Demo() {
+  const [collapsed, setCollapsed] = React.useState(false)
+  return (
+    <Layout style={{ marginBottom: 20 }}>
+      <Header style={stylHeader}>Header</Header>
+      <Content style={stylConten}>Content</Content>
+      <Footer>Footer</Footer>
+    </Layout>
+  );
+}
+
+ReactDOM.render(<Demo />, _mount_);
+```
+
+## Layout left-right
+
+<!--rehype:bgWhite=true&codeSandbox=true&codePen=true&noScroll=true-->
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Layout from '@uiw/react-layout';
+const { Header, Footer, Sider, Content } = Layout;
+
+const stylHeader = { color: '#fff' }
+const stylSider = { background: '#484a4e', color: '#fff', lineHeight: `120px`, textAlign: 'center' }
+const stylConten = { textAlign: 'center', background: 'rgba(16, 142, 233, 1)', minHeight: 120, lineHeight: '120px', color: '#fff' }
+
+function Demo() {
+  const [collapsed, setCollapsed] = React.useState(false)
+  return (
+    <Layout style={{ marginBottom: 20 }}>
+      <Sider collapsed={collapsed} style={stylSider}>Sider</Sider>
+      <Layout>
+        <Header style={stylHeader}>
+          <button onClick={() => setCollapsed(!collapsed)}>{collapsed ? '>>' : '<<'}</button>
+        </Header>
+        <Content style={stylConten}>Content</Content>
+        <Footer>Footer</Footer>
+      </Layout>
+    </Layout>
   );
 }
 

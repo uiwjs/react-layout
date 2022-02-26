@@ -21,7 +21,7 @@ const { Header, Footer, Sider, Content } = Layout;
 
 ## 基本用法
 
-<!--rehype:bgWhite=true&codeSandbox=true&codePen=true-->
+<!--rehype:bgWhite=true&codeSandbox=true&codePen=true&noScroll=true-->
 ```jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -37,23 +37,6 @@ function Demo() {
   return (
     <div>
       <Layout style={{ marginBottom: 20 }}>
-        <Sider collapsed={collapsed} style={stylSider}>Sider</Sider>
-        <Layout>
-          <Header style={stylHeader}>
-            <button onClick={() => setCollapsed(!collapsed)}>{collapsed ? '展开 Sider' : '缩进 Sider'}</button>
-          </Header>
-          <Content style={stylConten}>Content</Content>
-          <Footer>Footer</Footer>
-        </Layout>
-      </Layout>
-
-      <Layout style={{ marginBottom: 20 }}>
-        <Header style={stylHeader}>Header</Header>
-        <Content style={stylConten}>Content</Content>
-        <Footer>Footer</Footer>
-      </Layout>
-
-      <Layout style={{ marginBottom: 20 }}>
         <Header style={stylHeader}>Header</Header>
         <Layout>
           <Sider style={stylSider}>Sider</Sider>
@@ -62,7 +45,7 @@ function Demo() {
         <Footer>Footer</Footer>
       </Layout>
 
-      <Layout style={{ marginBottom: 20 }}>
+      <Layout>
         <Header style={stylHeader}>Header</Header>
         <Layout>
           <Content style={stylConten}>Content</Content>
@@ -76,6 +59,65 @@ function Demo() {
 
 ReactDOM.render(<Demo />, _mount_);
 ```
+
+## 上中下布局
+
+<!--rehype:bgWhite=true&codeSandbox=true&codePen=true&noScroll=true-->
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Layout from '@uiw/react-layout';
+const { Header, Footer, Sider, Content } = Layout;
+
+const stylHeader = { color: '#fff' }
+const stylConten = { textAlign: 'center', background: 'rgba(16, 142, 233, 1)', minHeight: 120, lineHeight: '120px', color: '#fff' }
+
+function Demo() {
+  const [collapsed, setCollapsed] = React.useState(false)
+  return (
+    <Layout style={{ marginBottom: 20 }}>
+      <Header style={stylHeader}>Header</Header>
+      <Content style={stylConten}>Content</Content>
+      <Footer>Footer</Footer>
+    </Layout>
+  );
+}
+
+ReactDOM.render(<Demo />, _mount_);
+```
+
+## 左右布局
+
+<!--rehype:bgWhite=true&codeSandbox=true&codePen=true&noScroll=true-->
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Layout from '@uiw/react-layout';
+const { Header, Footer, Sider, Content } = Layout;
+
+const stylHeader = { color: '#fff' }
+const stylSider = { background: '#484a4e', color: '#fff', lineHeight: `120px`, textAlign: 'center' }
+const stylConten = { textAlign: 'center', background: 'rgba(16, 142, 233, 1)', minHeight: 120, lineHeight: '120px', color: '#fff' }
+
+function Demo() {
+  const [collapsed, setCollapsed] = React.useState(false)
+  return (
+    <Layout style={{ marginBottom: 20 }}>
+      <Sider collapsed={collapsed} style={stylSider}>Sider</Sider>
+      <Layout>
+        <Header style={stylHeader}>
+          <button onClick={() => setCollapsed(!collapsed)}>{collapsed ? '>>' : '<<'}</button>
+        </Header>
+        <Content style={stylConten}>Content</Content>
+        <Footer>Footer</Footer>
+      </Layout>
+    </Layout>
+  );
+}
+
+ReactDOM.render(<Demo />, _mount_);
+```
+
 
 
 ## Layout
