@@ -20,7 +20,11 @@ import { Layout } from 'uiw';
 import Layout from '@uiw/react-layout';
 const { Header, Footer, Sider, Content } = Layout;
 // or
-import Layout, { LayoutHeader, LayoutContent, LayoutSider, LayoutFooter,  } from '@uiw/react-layout';
+import Layout, { LayoutHeader, LayoutContent, LayoutSider, LayoutFooter } from '@uiw/react-layout';
+Layout.Header = LayoutHeader
+Layout.Content = LayoutContent
+Layout.Sider = LayoutSider
+Layout.Footer = LayoutFooter
 ```
 
 ## 基本用法
@@ -29,7 +33,7 @@ import Layout, { LayoutHeader, LayoutContent, LayoutSider, LayoutFooter,  } from
 ```jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Layout from '@uiw/react-layout';
+import Layout, { LayoutHeader, LayoutContent, LayoutSider, LayoutFooter } from '@uiw/react-layout';
 const { Header, Footer, Sider, Content } = Layout;
 
 const stylHeader = { color: '#fff' }
@@ -56,6 +60,15 @@ function Demo() {
           <Sider style={stylSider}>Sider</Sider>
         </Layout>
         <Footer>Footer</Footer>
+      </Layout>
+
+      <Layout>
+        <LayoutHeader style={stylHeader}>Header</LayoutHeader>
+        <Layout>
+          <LayoutContent style={stylConten}>Content</LayoutContent>
+          <LayoutSider style={stylSider}>Sider</LayoutSider>
+        </Layout>
+        <LayoutFooter>Footer</LayoutFooter>
       </Layout>
     </div>
   );
