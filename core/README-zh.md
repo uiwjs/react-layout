@@ -19,6 +19,8 @@ import { Layout } from 'uiw';
 // or
 import Layout from '@uiw/react-layout';
 const { Header, Footer, Sider, Content } = Layout;
+// or
+import Layout, { LayoutHeader, LayoutContent, LayoutSider, LayoutFooter,  } from '@uiw/react-layout';
 ```
 
 ## 基本用法

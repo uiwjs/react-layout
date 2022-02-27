@@ -1,14 +1,14 @@
 import Layout from './Layout';
-import Header from './Header';
-import Footer from './Footer';
-import Sider from './Sider';
-import Content from './Content';
+import { LayoutHeader } from './Header';
+import { LayoutFooter } from './Footer';
+import { LayoutSider } from './Sider';
+import { LayoutContent } from './Content';
 import './style/index.less';
 
-Layout.Header = Header;
-Layout.Footer = Footer;
-Layout.Sider = Sider;
-Layout.Content = Content;
+Layout.Header = LayoutHeader;
+Layout.Footer = LayoutFooter;
+Layout.Sider = LayoutSider;
+Layout.Content = LayoutContent;
 
 export * from './Layout';
 export * from './Header';

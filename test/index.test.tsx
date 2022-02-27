@@ -4,18 +4,45 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import React from 'react';
-import Layout from '../core/src';
+import Layout, { LayoutHeader, LayoutContent, LayoutSider, LayoutFooter } from '../core/src';
 
-test('renders react-layout', () => {
-  const { Header, Footer, Sider, Content } = Layout;
+test('renders LayoutHeader/LayoutContent/LayoutSider/LayoutFooter', () => {
   render(
     <Layout style={{ marginBottom: 20 }}>
-      <Header>Header</Header>
+      <LayoutHeader>LayoutHeader</LayoutHeader>
       <Layout>
-        <Sider>Sider</Sider>
-        <Content>learn @uiw/react-layout</Content>
+        <LayoutSider>LayoutSider</LayoutSider>
+        <LayoutContent>learn @uiw/react-layout</LayoutContent>
       </Layout>
-      <Footer>Footer</Footer>
+      <LayoutFooter>LayoutFooter</LayoutFooter>
+    </Layout>
+  );
+  const linkElement = screen.getByText(/learn @uiw\/react-layout/i);
+  expect(linkElement.className).toEqual('w-layout-content')
+  expect(linkElement).toBeInTheDocument();
+
+  const footerElement = screen.getByText(/LayoutFooter/i);
+  expect(footerElement.className).toEqual('w-layout-footer')
+  expect(footerElement).toBeInTheDocument();
+
+  const headerElement = screen.getByText(/LayoutHeader/i);
+  expect(headerElement.className).toEqual('w-layout-header')
+  expect(headerElement).toBeInTheDocument();
+
+  const siderElement = screen.getByText(/LayoutSider/i);
+  expect(siderElement.className).toEqual('w-layout-sider')
+  expect(siderElement).toBeInTheDocument();
+});
+
+test('renders react-layout', () => {
+  render(
+    <Layout style={{ marginBottom: 20 }}>
+      <Layout.Header>Header</Layout.Header>
+      <Layout>
+        <Layout.Sider>Sider</Layout.Sider>
+        <Layout.Content>learn @uiw/react-layout</Layout.Content>
+      </Layout>
+      <Layout.Footer>Footer</Layout.Footer>
     </Layout>
   );
   const linkElement = screen.getByText(/learn @uiw\/react-layout/i);
@@ -35,8 +62,7 @@ test('renders react-layout', () => {
   expect(siderElement).toBeInTheDocument();
 });
 
-
-test('renders react-layout', () => {
+test('collapsed props', () => {
   const { Header, Footer, Sider, Content } = Layout;
   const Demo = () => {
     const [collapsed, setCollapsed] = React.useState(false)

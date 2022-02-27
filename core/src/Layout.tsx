@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
-import Sider from './Sider';
-import Content from './Content';
+import { LayoutHeader } from './Header';
+import { LayoutSider } from './Sider';
+import { LayoutFooter } from './Footer';
+import { LayoutContent } from './Content';
 
 export interface LayoutContextProps {
   siderHook: {
@@ -26,10 +26,10 @@ export interface LayoutState {
 }
 
 export default class Layout extends React.Component<LayoutProps, LayoutState> {
-  static Header: typeof Header;
-  static Footer: typeof Footer;
-  static Sider: typeof Sider;
-  static Content: typeof Content;
+  static Header: typeof LayoutHeader;
+  static Footer: typeof LayoutFooter;
+  static Sider: typeof LayoutSider;
+  static Content: typeof LayoutContent;
   public static defaultProps: LayoutProps = {
     prefixCls: 'w-layout',
   };

@@ -5,7 +5,7 @@ export function randomid(): string {
   return parseInt(String(Math.random() * 1e15), 10).toString(36);
 }
 
-export interface SiderProps extends React.HTMLAttributes<HTMLElement> {
+export interface LayoutSiderProps extends React.HTMLAttributes<HTMLElement> {
   prefixCls?: string;
   children?: React.ReactNode;
   width?: number | string;
@@ -13,7 +13,7 @@ export interface SiderProps extends React.HTMLAttributes<HTMLElement> {
   collapsed?: boolean;
 }
 
-function Sider(props = {} as SiderProps & LayoutContextProps) {
+function Sider(props = {} as LayoutSiderProps & LayoutContextProps) {
   const {
     prefixCls = 'w-layout-sider',
     className,
@@ -55,10 +55,10 @@ function Sider(props = {} as SiderProps & LayoutContextProps) {
   );
 }
 
-export default (props = {} as SiderProps) => {
+export function LayoutSider(props: LayoutSiderProps) {
   return (
     <LayoutContext.Consumer>
       {(context: LayoutContextProps) => <Sider {...props} {...context} />}
     </LayoutContext.Consumer>
   );
-};
+}
