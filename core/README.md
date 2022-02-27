@@ -6,6 +6,7 @@ Layout
 [![Open in unpkg](https://img.shields.io/badge/Open%20in-unpkg-blue)](https://uiwjs.github.io/npm-unpkg/#/pkg/@uiw/react-layout/file/README.md)
 [![npm version](https://img.shields.io/npm/v/@uiw/react-layout.svg)](https://www.npmjs.com/package/@uiw/react-layout)
 [![Coverage Status](https://uiwjs.github.io/react-layout/badges.svg)](https://uiwjs.github.io/react-layout/coverage/lcov-report/)
+[![Open in Gitpod](https://shields.io/badge/Open%20in-Gitpod-green?logo=Gitpod)](https://gitpod.io/#https://github.com/uiwjs/react-layout)
 
 Handling the overall layout of a page.
 
