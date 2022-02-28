@@ -11,7 +11,7 @@
     "@uiw/react-code-preview": "4.0.5",
     "@uiw/react-github-corners": "1.5.3",
     "@uiw/react-layout": "4.10.1",
-    "@uiw/react-markdown-preview": "3.4.7",
+    "@uiw/react-markdown-preview": "3.5.1",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
