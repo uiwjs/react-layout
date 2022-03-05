@@ -8,19 +8,19 @@
     "build": "kkt build"
   },
   "dependencies": {
-    "@uiw/react-code-preview": "4.0.5",
-    "@uiw/react-github-corners": "1.5.3",
-    "@uiw/react-layout": "4.10.1",
-    "@uiw/react-markdown-preview": "3.4.7",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "@uiw/react-code-preview": "~4.0.5",
+    "@uiw/react-github-corners": "~1.5.3",
+    "@uiw/react-layout": "~4.10.1",
+    "@uiw/react-markdown-preview": "~3.5.1",
+    "react": "~17.0.2",
+    "react-dom": "~17.0.2"
   },
   "devDependencies": {
     "@kkt/less-modules": "~7.1.1",
     "@kkt/raw-modules": "~7.1.1",
     "@kkt/scope-plugin-options": "~7.1.1",
-    "@types/react": "17.0.39",
-    "@types/react-dom": "17.0.11",
+    "@types/react": "~17.0.39",
+    "@types/react-dom": "~17.0.13",
     "kkt": "~7.1.5"
   },
   "eslintConfig": {
