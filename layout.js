@@ -7,7 +7,7 @@
 		exports["@uiw/react-layout"] = factory(require("react"));
 	else
 		root["@uiw/react-layout"] = factory(root["React"]);
-})(self, function(__WEBPACK_EXTERNAL_MODULE__787__) {
+})(self, (__WEBPACK_EXTERNAL_MODULE__787__) => {
 return /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
