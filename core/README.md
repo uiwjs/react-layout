@@ -148,8 +148,8 @@ The layout wrapper, in which `Header` `Sider` `Content` `Footer` or `Layout` its
 |--------- |-------- |--------- |-------- |
 | className | Container className | string | - |
 | style | To customize the styles | CSSProperties | - |
-| theme | Color theme of the sidebar | `light`、`dark` | `dark` |
 | hasSider | hasSider	Whether contain Sider in children, don't have to assign it normally. Useful in ssr avoid style flickering | boolean | - |
+<!-- | theme | Color theme of the sidebar | `light`、`dark` | `dark` | -->
 
 ## Layout.Sider
 
