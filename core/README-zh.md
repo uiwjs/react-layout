@@ -148,8 +148,8 @@ ReactDOM.render(<Demo />, _mount_);
 |--------- |-------- |--------- |-------- |
 | className | 容器 className | string | - |
 | style | 指定样式 | CSSProperties | - |
-| theme | 主题颜色 | `light`、`dark` | `dark` |
 | hasSider | 表示子元素里有 Sider，一般不用指定。可用于服务端渲染时避免样式闪动 | boolean | - |
+<!-- | theme | 主题颜色 | `light`、`dark` | `dark` | -->
 
 ## Layout.Sider
 
