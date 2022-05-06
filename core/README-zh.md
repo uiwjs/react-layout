@@ -74,7 +74,7 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, _mount_);
+export default Demo;
 ```
 
 ## 上中下布局
@@ -100,7 +100,7 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, _mount_);
+export default Demo;
 ```
 
 ## 左右布局
@@ -132,7 +132,7 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, _mount_);
+export default Demo;
 ```
 
 ## Layout

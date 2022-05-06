@@ -74,7 +74,7 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, _mount_);
+export default Demo;
 ```
 
 ## Layout top-middle-bottom
@@ -100,7 +100,7 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, _mount_);
+export default Demo;
 ```
 
 ## Layout left-right
@@ -132,7 +132,7 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, _mount_);
+export default Demo;
 ```
 
 ## Layout
