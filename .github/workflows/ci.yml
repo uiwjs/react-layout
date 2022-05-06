@@ -2,10 +2,9 @@ name: CI
 on:
   push:
     branches:
-      - main
+      - v4
 
 # env:
-#   SKIP_PREFLIGHT_CHECK: true
 jobs:
   windows:
     runs-on: windows-2019
