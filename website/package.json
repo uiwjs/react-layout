@@ -1,6 +1,6 @@
 {
   "name": "website",
-  "version": "4.10.1",
+  "version": "4.10.2",
   "description": "Simple React package development project example template.",
   "private": true,
   "scripts": {
@@ -11,13 +11,13 @@
     "@uiw/react-codepen": "~1.0.2",
     "@uiw/react-codesandbox": "~1.1.5",
     "@uiw/react-github-corners": "~1.5.3",
-    "@uiw/react-layout": "~4.10.1",
+    "@uiw/react-layout": "4.10.2",
     "@uiw/react-markdown-preview": "^4.0.16",
     "@wcj/dark-mode": "^1.0.14",
-    "rehype-ignore": "^1.0.1",
-    "react-code-preview-layout": "^2.0.3",
     "react": "~17.0.2",
-    "react-dom": "~17.0.2"
+    "react-code-preview-layout": "^2.0.3",
+    "react-dom": "~17.0.2",
+    "rehype-ignore": "^1.0.1"
   },
   "devDependencies": {
     "@kkt/less-modules": "~7.1.1",
