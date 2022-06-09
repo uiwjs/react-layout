@@ -47,6 +47,7 @@
     "node": ">=16.0.0"
   },
   "devDependencies": {
+    "@testing-library/react": "^12.1.5",
     "@kkt/ncc": "~1.0.8",
     "compile-less-cli": "~1.8.11",
     "husky": "~8.0.0",
