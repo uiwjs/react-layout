@@ -8,10 +8,14 @@
     "build": "kkt build"
   },
   "dependencies": {
-    "@uiw/react-code-preview": "~4.0.5",
+    "@uiw/react-codepen": "~1.0.2",
+    "@uiw/react-codesandbox": "~1.1.5",
     "@uiw/react-github-corners": "~1.5.3",
     "@uiw/react-layout": "~4.10.1",
-    "@uiw/react-markdown-preview": "~3.5.1",
+    "@uiw/react-markdown-preview": "^4.0.16",
+    "@wcj/dark-mode": "^1.0.14",
+    "rehype-ignore": "^1.0.1",
+    "react-code-preview-layout": "^2.0.3",
     "react": "~17.0.2",
     "react-dom": "~17.0.2"
   },
@@ -21,7 +25,8 @@
     "@kkt/scope-plugin-options": "~7.1.1",
     "@types/react": "~17.0.39",
     "@types/react-dom": "~17.0.13",
-    "kkt": "~7.1.5"
+    "kkt": "~7.1.5",
+    "markdown-react-code-preview-loader": "2.1.2"
   },
   "eslintConfig": {
     "extends": [

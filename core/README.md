@@ -1,5 +1,7 @@
+<!--rehype:ignore:start-->
 Layout
 ===
+<!--rehype:ignore:end-->
 
 [![NPM Downloads](https://img.shields.io/npm/dm/@uiw/react-layout.svg?style=flat)](https://www.npmjs.com/package/@uiw/react-layout)
 [![Build & Deploy](https://github.com/uiwjs/react-layout/actions/workflows/ci.yml/badge.svg)](https://github.com/uiwjs/react-layout/actions/workflows/ci.yml)
@@ -29,8 +31,7 @@ Layout.Footer = LayoutFooter
 
 ## Basic Usage
 
-<!--rehype:bgWhite=true&codeSandbox=true&codePen=true&noScroll=true-->
-```jsx
+```jsx mdx:preview
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Layout, { LayoutHeader, LayoutContent, LayoutSider, LayoutFooter } from '@uiw/react-layout';
@@ -79,8 +80,7 @@ export default Demo;
 
 ## Layout top-middle-bottom
 
-<!--rehype:bgWhite=true&codeSandbox=true&codePen=true&noScroll=true-->
-```jsx
+```jsx mdx:preview
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Layout from '@uiw/react-layout';
@@ -105,8 +105,7 @@ export default Demo;
 
 ## Layout left-right
 
-<!--rehype:bgWhite=true&codeSandbox=true&codePen=true&noScroll=true-->
-```jsx
+```jsx mdx:preview
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Layout from '@uiw/react-layout';

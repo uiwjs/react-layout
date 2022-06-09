@@ -1,5 +1,4 @@
-import React, { Fragment } from 'react';
-// import { Divider } from 'uiw';
+import { Fragment } from 'react';
 
 export type FooterProps = {
   path?: string;

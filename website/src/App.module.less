@@ -1,10 +1,15 @@
 .app {
   padding-bottom: 70px;
-  background-color: #fff;
+}
+
+dark-mode {
+  position: absolute;
+  left: 10px;
+  top: 10px;
 }
 
 .header {
-  background-color: #282c34;
+  background-color: var(--color-canvas-subtle);
   min-height: calc(100vh - 80px);
   display: flex;
   flex-direction: column;
@@ -12,11 +17,8 @@
   justify-content: center;
   padding-bottom: 30px;
   text-align: center;
-  color: white;
   sup {
-    background-color: #ffffff21;
     border-radius: 3px;
-    color: #fff;
     font-size: 12px;
     padding: 1px 5px;
   }
@@ -29,15 +31,14 @@
 .info {
   font-size: 21px;
   max-width: 520px;
-  color: #969ca7;
 }
 
-.markdown {
-  margin: 0 auto;
-  text-align: left;
+.footer {
   max-width: 750px;
-  overflow: auto;
-  background-color: #fff;
-  padding: 16px 20px;
-  border-radius: 5px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 64px;
+  a + a {
+    margin-left: 10px;
+  }
 }
