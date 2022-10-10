@@ -29,8 +29,7 @@ Layout.Footer = LayoutFooter
 
 ## 基本用法
 
-<!--rehype:bgWhite=true&codeSandbox=true&codePen=true&noScroll=true-->
-```jsx
+```jsx mdx:preview
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Layout, { LayoutHeader, LayoutContent, LayoutSider, LayoutFooter } from '@uiw/react-layout';
@@ -79,8 +78,7 @@ export default Demo;
 
 ## 上中下布局
 
-<!--rehype:bgWhite=true&codeSandbox=true&codePen=true&noScroll=true-->
-```jsx
+```jsx mdx:preview
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Layout from '@uiw/react-layout';
@@ -105,8 +103,7 @@ export default Demo;
 
 ## 左右布局
 
-<!--rehype:bgWhite=true&codeSandbox=true&codePen=true&noScroll=true-->
-```jsx
+```jsx mdx:preview
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Layout from '@uiw/react-layout';
