@@ -15,7 +15,7 @@
     "@uiw/react-markdown-preview": "^4.0.16",
     "@wcj/dark-mode": "^1.0.14",
     "react": "~18.2.0",
-    "react-code-preview-layout": "^2.0.3",
+    "react-code-preview-layout": "^3.0.0",
     "react-dom": "~18.2.0",
     "rehype-ignore": "^1.0.1"
   },
