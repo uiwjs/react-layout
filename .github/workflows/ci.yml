@@ -4,11 +4,9 @@ on:
     branches:
       - main
 
-# env:
-#   SKIP_PREFLIGHT_CHECK: true
 jobs:
   windows:
-    runs-on: windows-2019
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -16,7 +14,7 @@ jobs:
           node-version: 16
 
       - name: Look Changelog
-        uses: jaywcjlove/changelog-generator@v1.4.8
+        uses: jaywcjlove/changelog-generator@main
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           filter-author: (小弟调调™|Renovate Bot|renovate-bot)
@@ -28,15 +26,16 @@ jobs:
       - run: npm run doc
 
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 16
+          registry-url: 'https://registry.npmjs.org'
 
       - name: Look Changelog
-        uses: jaywcjlove/changelog-generator@v1.4.8
+        uses: jaywcjlove/changelog-generator@main
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           filter-author: (小弟调调™|Renovate Bot|renovate-bot)
@@ -67,13 +66,13 @@ jobs:
 
       - name: Is a tag created auto?
         id: create_tag
-        uses: jaywcjlove/create-tag-action@v1.3.6
+        uses: jaywcjlove/create-tag-action@main
         with:
           package-path: ./core/package.json
 
       - name: get tag version
         id: tag_version
-        uses: jaywcjlove/changelog-generator@v1.5.3
+        uses: jaywcjlove/changelog-generator@main
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
@@ -84,7 +83,7 @@ jobs:
 
       - name: Generate Changelog
         id: changelog
-        uses: jaywcjlove/changelog-generator@v1.5.3
+        uses: jaywcjlove/changelog-generator@main
         if: steps.create_tag.outputs.successful
         with:
           head-ref: ${{ steps.create_tag.outputs.version }}
@@ -104,12 +103,9 @@ jobs:
             
             ${{ steps.changelog.outputs.changelog }}
 
-      # - run: git status
-      # - run: npm install @jsdevtools/npm-publish -g
-      # - run: npm-publish --token="${{ secrets.NPM_TOKEN }}" ./core/package.json
-
-      - name: 📦 @uiw/react-layout publish to NPM
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: ./core/package.json
+      - run: npm publish --access public
+        name: 📦 @uiw/react-layout publish to NPM
+        working-directory: ./core/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
