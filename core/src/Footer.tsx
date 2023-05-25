@@ -5,11 +5,12 @@ export interface LayoutFooterProps extends React.HTMLAttributes<HTMLElement> {
   children?: React.ReactNode;
 }
 
-export function LayoutFooter(props: LayoutFooterProps) {
+export const LayoutFooter = React.forwardRef<HTMLElement, LayoutFooterProps>((props, ref) => {
   const { prefixCls = 'w-layout-footer', className, children, ...other } = props;
+  const cls = [prefixCls, className].filter(Boolean).join(' ').trim();
   return (
-    <footer className={[prefixCls, className].filter(Boolean).join(' ').trim()} {...other}>
+    <footer ref={ref} className={cls} {...other}>
       {children}
     </footer>
   );
-}
+});

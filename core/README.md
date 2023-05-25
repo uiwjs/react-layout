@@ -23,10 +23,11 @@ import Layout from '@uiw/react-layout';
 const { Header, Footer, Sider, Content } = Layout;
 // or
 import Layout, { LayoutHeader, LayoutContent, LayoutSider, LayoutFooter } from '@uiw/react-layout';
-Layout.Header = LayoutHeader
-Layout.Content = LayoutContent
-Layout.Sider = LayoutSider
-Layout.Footer = LayoutFooter
+
+Layout.Header === LayoutHeader
+Layout.Content === LayoutContent
+Layout.Sider === LayoutSider
+Layout.Footer === LayoutFooter
 ```
 
 ## Basic Usage
@@ -150,7 +151,55 @@ The layout wrapper, in which `Header` `Sider` `Content` `Footer` or `Layout` its
 | hasSider | hasSider	Whether contain Sider in children, don't have to assign it normally. Useful in ssr avoid style flickering | boolean | - |
 <!-- | theme | Color theme of the sidebar | `light`、`dark` | `dark` | -->
 
-## Layout.Sider
+## Header
+
+```ts
+import Layout, { LayoutHeader } from '@uiw/react-layout';
+Layout.Header === LayoutHeader
+```
+
+```ts
+import React from 'react';
+export interface LayoutHeaderProps extends React.HTMLAttributes<HTMLElement> {
+  prefixCls?: string;
+  children?: React.ReactNode;
+}
+export declare const LayoutHeader: React.ForwardRefExoticComponent<LayoutHeaderProps & React.RefAttributes<HTMLElement>>;
+```
+
+## Content
+
+```ts
+import Layout, { LayoutContent } from '@uiw/react-layout';
+Layout.Content === LayoutContent
+```
+
+```ts
+import React from 'react';
+export interface LayoutContentProps extends React.HTMLAttributes<HTMLElement> {
+  prefixCls?: string;
+  children?: React.ReactNode;
+}
+export declare const LayoutContent: React.ForwardRefExoticComponent<LayoutContentProps & React.RefAttributes<HTMLElement>>;
+```
+
+## Footer
+
+```ts
+import Layout, { LayoutFooter } from '@uiw/react-layout';
+Layout.Footer === LayoutFooter
+```
+
+```ts
+import React from 'react';
+export interface LayoutFooterProps extends React.HTMLAttributes<HTMLElement> {
+  prefixCls?: string;
+  children?: React.ReactNode;
+}
+export declare const LayoutFooter: React.ForwardRefExoticComponent<LayoutFooterProps & React.RefAttributes<HTMLElement>>;
+```
+
+## Sider
 
 | Property | Description | Type | Default |
 |--------- |-------- |--------- |-------- |
@@ -159,6 +208,27 @@ The layout wrapper, in which `Header` `Sider` `Content` `Footer` or `Layout` its
 | collapsed | To set the current status | boolean | - |
 | collapsedWidth | Width of the collapsed sidebar, by setting to 0 a special trigger will appear | boolean | `80` |
 | width | Width of the sidebar | number/string | 200 |
+
+```ts
+import Layout, { LayoutSider } from '@uiw/react-layout';
+Layout.Sider === LayoutSider
+```
+
+```ts
+import React from 'react';
+export declare function randomid(): string;
+export interface LayoutSiderProps extends React.HTMLAttributes<HTMLElement> {
+  prefixCls?: string;
+  children?: React.ReactNode;
+  /** Width of the sidebar */
+  width?: number | string;
+  /** Width of the collapsed sidebar, by setting to 0 a special trigger will appear */
+  collapsedWidth?: number;
+  /** To set the current status */
+  collapsed?: boolean;
+}
+export declare const LayoutSider: React.ForwardRefExoticComponent<LayoutSiderProps & React.RefAttributes<HTMLDivElement>>;
+```
 
 ## Contributors
 

@@ -5,11 +5,12 @@ export interface LayoutHeaderProps extends React.HTMLAttributes<HTMLElement> {
   children?: React.ReactNode;
 }
 
-export function LayoutHeader(props: LayoutHeaderProps) {
+export const LayoutHeader = React.forwardRef<HTMLElement, LayoutHeaderProps>((props, ref) => {
   const { prefixCls = 'w-layout-header', className, children, ...other } = props || {};
+  const cls = [prefixCls, className].filter(Boolean).join(' ').trim();
   return (
-    <header className={[prefixCls, className].filter(Boolean).join(' ').trim()} {...other}>
+    <header ref={ref} className={cls} {...other}>
       {children}
     </header>
   );
-}
+});

@@ -9,7 +9,7 @@ export default function Footer(props: FooterProps = {}) {
   const url = /^http/.test(path || '') ? path : `https://github.com/uiwjs/uiw/blob/master/${path}`;
   return (
     <Fragment>
-      犯了错误还是想对文件做出贡献？
+      发现错误还是想对文件做出贡献？
       {url && (
         <a href={url} target="_blank" rel="noopener noreferrer">
           在Github上编辑本页！

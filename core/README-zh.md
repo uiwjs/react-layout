@@ -21,10 +21,11 @@ import Layout from '@uiw/react-layout';
 const { Header, Footer, Sider, Content } = Layout;
 // or
 import Layout, { LayoutHeader, LayoutContent, LayoutSider, LayoutFooter } from '@uiw/react-layout';
-Layout.Header = LayoutHeader
-Layout.Content = LayoutContent
-Layout.Sider = LayoutSider
-Layout.Footer = LayoutFooter
+
+Layout.Header === LayoutHeader
+Layout.Content === LayoutContent
+Layout.Sider === LayoutSider
+Layout.Footer === LayoutFooter
 ```
 
 ## 基本用法
@@ -148,6 +149,54 @@ export default Demo;
 | hasSider | 表示子元素里有 Sider，一般不用指定。可用于服务端渲染时避免样式闪动 | boolean | - |
 <!-- | theme | 主题颜色 | `light`、`dark` | `dark` | -->
 
+## Header
+
+```ts
+import Layout, { LayoutHeader } from '@uiw/react-layout';
+Layout.Header === LayoutHeader
+```
+
+```ts
+import React from 'react';
+export interface LayoutHeaderProps extends React.HTMLAttributes<HTMLElement> {
+  prefixCls?: string;
+  children?: React.ReactNode;
+}
+export declare const LayoutHeader: React.ForwardRefExoticComponent<LayoutHeaderProps & React.RefAttributes<HTMLElement>>;
+```
+
+## Content
+
+```ts
+import Layout, { LayoutContent } from '@uiw/react-layout';
+Layout.Content === LayoutContent
+```
+
+```ts
+import React from 'react';
+export interface LayoutContentProps extends React.HTMLAttributes<HTMLElement> {
+  prefixCls?: string;
+  children?: React.ReactNode;
+}
+export declare const LayoutContent: React.ForwardRefExoticComponent<LayoutContentProps & React.RefAttributes<HTMLElement>>;
+```
+
+## Footer
+
+```ts
+import Layout, { LayoutFooter } from '@uiw/react-layout';
+Layout.Footer === LayoutFooter
+```
+
+```ts
+import React from 'react';
+export interface LayoutFooterProps extends React.HTMLAttributes<HTMLElement> {
+  prefixCls?: string;
+  children?: React.ReactNode;
+}
+export declare const LayoutFooter: React.ForwardRefExoticComponent<LayoutFooterProps & React.RefAttributes<HTMLElement>>;
+```
+
 ## Layout.Sider
 
 | 参数 | 说明 | 类型 | 默认值 |
@@ -158,16 +207,23 @@ export default Demo;
 | collapsedWidth | 收缩宽度，设置为 `0` | boolean | `80` |
 | width | 宽度 | number/string | 200 |
 
-## Contributors
+```ts
+import Layout, { LayoutSider } from '@uiw/react-layout';
+Layout.Sider === LayoutSider
+```
 
-As always, thanks to our amazing contributors!
-
-<a href="https://github.com/jaywcjlove/github-action-contributors/graphs/contributors">
-  <img src="https://jaywcjlove.github.io/github-action-contributors/CONTRIBUTORS.svg" />
-</a>
-
-Made with [github-action-contributors](https://github.com/jaywcjlove/github-action-contributors).
-
-### License
-
-Licensed under the MIT License.
+```ts
+import React from 'react';
+export declare function randomid(): string;
+export interface LayoutSiderProps extends React.HTMLAttributes<HTMLElement> {
+  prefixCls?: string;
+  children?: React.ReactNode;
+  /** Width of the sidebar */
+  width?: number | string;
+  /** Width of the collapsed sidebar, by setting to 0 a special trigger will appear */
+  collapsedWidth?: number;
+  /** To set the current status */
+  collapsed?: boolean;
+}
+export declare const LayoutSider: React.ForwardRefExoticComponent<LayoutSiderProps & React.RefAttributes<HTMLDivElement>>;
+```

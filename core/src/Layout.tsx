@@ -1,20 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { LayoutHeader } from './Header';
 import { LayoutSider } from './Sider';
 import { LayoutFooter } from './Footer';
 import { LayoutContent } from './Content';
 
 export interface LayoutContextProps {
-  siderHook: {
-    addSider: (id: string) => void;
-    removeSider: (id: string) => void;
-  };
+  addSider: (id: string) => void;
+  removeSider: (id: string) => void;
 }
+
 export const LayoutContext = React.createContext<LayoutContextProps>({
-  siderHook: {
-    addSider: () => null,
-    removeSider: () => null,
-  },
+  addSider: () => null,
+  removeSider: () => null,
 });
 
 export interface LayoutProps extends React.HTMLAttributes<HTMLElement> {
@@ -25,49 +22,38 @@ export interface LayoutState {
   siders: string[];
 }
 
-export default class Layout extends React.Component<LayoutProps, LayoutState> {
-  static Header: typeof LayoutHeader;
-  static Footer: typeof LayoutFooter;
-  static Sider: typeof LayoutSider;
-  static Content: typeof LayoutContent;
-  public static defaultProps: LayoutProps = {
-    prefixCls: 'w-layout',
+const Layout = React.forwardRef<HTMLElement, LayoutProps>((props, ref) => {
+  const { prefixCls = 'w-layout', className, hasSider, children, ...other } = props;
+  const [siders, setSiders] = useState<string[]>([]);
+  const addSider = (id: string) => {
+    setSiders((state) => [...state, id]);
   };
-  state = { siders: [] };
-  getSiderHook() {
-    return {
-      addSider: (id: string) => {
-        this.setState((state) => ({
-          siders: [...state.siders, id],
-        }));
-      },
-      removeSider: (id: string) => {
-        this.setState((state) => ({
-          siders: state.siders.filter((currentId) => currentId !== id),
-        }));
-      },
-    };
-  }
-  render() {
-    const { prefixCls, className, hasSider, children, ...other } = this.props;
-    return (
-      <LayoutContext.Provider value={{ siderHook: this.getSiderHook() }}>
-        <section
-          className={[
-            prefixCls,
-            className,
-            (typeof hasSider === 'boolean' && hasSider) || this.state.siders.length > 0
-              ? `${prefixCls}-has-sider`
-              : null,
-          ]
-            .filter(Boolean)
-            .join(' ')
-            .trim()}
-          {...other}
-        >
-          {children}
-        </section>
-      </LayoutContext.Provider>
-    );
-  }
-}
+  const removeSider = (id: string) => {
+    setSiders((state) => [...state.filter((currentId) => currentId !== id)]);
+  };
+  const cls = [
+    prefixCls,
+    className,
+    (typeof hasSider === 'boolean' && hasSider) || siders.length > 0 ? `${prefixCls}-has-sider` : null,
+  ]
+    .filter(Boolean)
+    .join(' ')
+    .trim();
+  return (
+    <LayoutContext.Provider value={{ addSider, removeSider }}>
+      <section ref={ref} className={cls} {...other}>
+        {children}
+      </section>
+    </LayoutContext.Provider>
+  );
+});
+
+type LoginComponent = typeof Layout & {
+  Header: typeof LayoutHeader;
+  Footer: typeof LayoutFooter;
+  Sider: typeof LayoutSider;
+  Content: typeof LayoutContent;
+};
+Layout.displayName = 'Layout';
+
+export default Layout as LoginComponent;

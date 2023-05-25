@@ -8,12 +8,15 @@ export function randomid(): string {
 export interface LayoutSiderProps extends React.HTMLAttributes<HTMLElement> {
   prefixCls?: string;
   children?: React.ReactNode;
+  /** Width of the sidebar */
   width?: number | string;
+  /** Width of the collapsed sidebar, by setting to 0 a special trigger will appear */
   collapsedWidth?: number;
+  /** To set the current status */
   collapsed?: boolean;
 }
 
-function Sider(props = {} as LayoutSiderProps & LayoutContextProps) {
+const Sider = React.forwardRef<HTMLDivElement, LayoutSiderProps>((props, ref) => {
   const {
     prefixCls = 'w-layout-sider',
     className,
@@ -22,19 +25,20 @@ function Sider(props = {} as LayoutSiderProps & LayoutContextProps) {
     width = 200,
     collapsedWidth = 80,
     collapsed = false,
-    siderHook,
+    addSider,
+    removeSider,
     ...other
-  } = props;
+  } = props as LayoutSiderProps & LayoutContextProps;
   const [sliderId] = useState(`w-layout-${randomid()}`);
   const [rawWidth, setRawWidth] = useState(collapsed ? collapsedWidth : width);
 
   useEffect(() => {
-    if (siderHook && !!siderHook.addSider) {
-      siderHook.addSider(sliderId);
+    if (addSider) {
+      addSider(sliderId);
     }
     return () => {
-      if (siderHook && !!siderHook.removeSider) {
-        siderHook.removeSider(sliderId);
+      if (removeSider) {
+        removeSider(sliderId);
       }
     };
   }, []);
@@ -49,16 +53,16 @@ function Sider(props = {} as LayoutSiderProps & LayoutContextProps) {
     width: rawWidth,
   };
   return (
-    <div className={[prefixCls, className].filter(Boolean).join(' ').trim()} style={divStyle} {...other}>
+    <div ref={ref} className={[prefixCls, className].filter(Boolean).join(' ').trim()} style={divStyle} {...other}>
       {children}
     </div>
   );
-}
+});
 
-export function LayoutSider(props: LayoutSiderProps) {
+export const LayoutSider = React.forwardRef<HTMLDivElement, LayoutSiderProps>((props, ref) => {
   return (
     <LayoutContext.Consumer>
-      {(context: LayoutContextProps) => <Sider {...props} {...context} />}
+      {(context: LayoutContextProps) => <Sider ref={ref} {...props} {...context} />}
     </LayoutContext.Consumer>
   );
-}
+});
