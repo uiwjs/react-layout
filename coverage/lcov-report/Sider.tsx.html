@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>16/16</span>
+                <span class='fraction'>18/18</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">82.35% </span>
+                <span class="strong">83.33% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>14/17</span>
+                <span class='fraction'>10/12</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>15/15</span>
+                <span class='fraction'>17/17</span>
             </div>
         
             
@@ -127,7 +127,11 @@
 <a name='L62'></a><a href='#L62'>62</a>
 <a name='L63'></a><a href='#L63'>63</a>
 <a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -142,6 +146,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -184,7 +192,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
@@ -201,12 +209,15 @@ export function randomid(): string {
 export interface LayoutSiderProps extends React.HTMLAttributes&lt;HTMLElement&gt; {
   prefixCls?: string;
   children?: React.ReactNode;
+  /** Width of the sidebar */
   width?: number | string;
+  /** Width of the collapsed sidebar, by setting to 0 a special trigger will appear */
   collapsedWidth?: number;
+  /** To set the current status */
   collapsed?: boolean;
 }
 &nbsp;
-function Sider(props = <span class="branch-0 cbranch-no" title="branch not covered" >{} as LayoutSiderProps &amp; LayoutContextProps)</span> {
+const Sider = React.forwardRef&lt;HTMLDivElement, LayoutSiderProps&gt;((props, ref) =&gt; {
   const {
     prefixCls = 'w-layout-sider',
     className,
@@ -215,19 +226,20 @@ function Sider(props = <span class="branch-0 cbranch-no" title="branch not cover
     width = 200,
     collapsedWidth = 80,
     collapsed = false,
-    siderHook,
+    addSider,
+    removeSider,
     ...other
-  } = props;
+  } = props as LayoutSiderProps &amp; LayoutContextProps;
   const [sliderId] = useState(`w-layout-${randomid()}`);
   const [rawWidth, setRawWidth] = useState(collapsed ? collapsedWidth : width);
 &nbsp;
   useEffect(() =&gt; {
-    <span class="missing-if-branch" title="else path not taken" >E</span>if (siderHook &amp;&amp; !!siderHook.addSider) {
-      siderHook.addSider(sliderId);
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (addSider) {
+      addSider(sliderId);
     }
     return () =&gt; {
-      <span class="missing-if-branch" title="else path not taken" >E</span>if (siderHook &amp;&amp; !!siderHook.removeSider) {
-        siderHook.removeSider(sliderId);
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (removeSider) {
+        removeSider(sliderId);
       }
     };
   }, []);
@@ -242,19 +254,19 @@ function Sider(props = <span class="branch-0 cbranch-no" title="branch not cover
     width: rawWidth,
   };
   return (
-    &lt;div className={[prefixCls, className].filter(Boolean).join(' ').trim()} style={divStyle} {...other}&gt;
+    &lt;div ref={ref} className={[prefixCls, className].filter(Boolean).join(' ').trim()} style={divStyle} {...other}&gt;
       {children}
     &lt;/div&gt;
   );
-}
+});
 &nbsp;
-export function LayoutSider(props: LayoutSiderProps) {
+export const LayoutSider = React.forwardRef&lt;HTMLDivElement, LayoutSiderProps&gt;((props, ref) =&gt; {
   return (
     &lt;LayoutContext.Consumer&gt;
-      {(context: LayoutContextProps) =&gt; &lt;Sider {...props} {...context} /&gt;}
+      {(context: LayoutContextProps) =&gt; &lt;Sider ref={ref} {...props} {...context} /&gt;}
     &lt;/LayoutContext.Consumer&gt;
   );
-}
+});
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -262,7 +274,7 @@ export function LayoutSider(props: LayoutSiderProps) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-04-10T14:57:38.763Z
+                at 2023-05-25T03:11:29.526Z
             </div>
         <script src="prettify.js"></script>
         <script>
