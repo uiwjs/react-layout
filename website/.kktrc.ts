@@ -1,16 +1,11 @@
 import path from 'path';
 import webpack from 'webpack';
-import { Configuration } from 'webpack';
-import lessModules from '@kkt/less-modules';
-// import rawModules from '@kkt/raw-modules';
+import { LoaderConfOptions, WebpackConfiguration } from 'kkt';
 import scopePluginOptions from '@kkt/scope-plugin-options';
 import { mdCodeModulesLoader } from 'markdown-react-code-preview-loader';
-import { LoaderConfOptions } from 'kkt';
 import pkg from './package.json';
 
-export default (conf: Configuration, env: 'development' | 'production', options: LoaderConfOptions) => {
-  conf = lessModules(conf, env, options);
-  // conf = rawModules(conf, env, options);
+export default (conf: WebpackConfiguration, env: 'development' | 'production', options: LoaderConfOptions) => {
   conf = mdCodeModulesLoader(conf);
   conf = scopePluginOptions(conf, env, {
     ...options,
@@ -23,9 +18,9 @@ export default (conf: Configuration, env: 'development' | 'production', options:
     }),
   );
 
+  /** https://github.com/uiwjs/react-code-preview/issues/94 */
+  conf.module!.exprContextCritical = false;
   if (env === 'production') {
-    /** https://github.com/uiwjs/react-code-preview/issues/94 */
-    conf.module!.exprContextCritical = false;
     conf.output = { ...conf.output, publicPath: './' };
     conf.optimization = {
       ...conf.optimization,

@@ -1,5 +1,4 @@
 {
   "version": "4.10.4",
-  "packages": ["website", "core"],
-  "useWorkspaces": true
+  "packages": ["website", "core"]
 }
