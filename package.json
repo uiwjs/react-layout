@@ -49,6 +49,7 @@
   },
   "devDependencies": {
     "@testing-library/react": "^14.0.0",
+    "@kkt/less-modules": "^7.5.2",
     "@kkt/ncc": "^1.0.15",
     "compile-less-cli": "^1.8.13",
     "husky": "^8.0.1",
