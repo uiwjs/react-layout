@@ -12,7 +12,7 @@ return /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 298:
+/***/ 349:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 var __webpack_unused_export__;
@@ -31,13 +31,13 @@ function q(c,a,g){var b,d={},e=null,h=null;void 0!==g&&(e=""+g);void 0!==a.key&&
 
 /***/ }),
 
-/***/ 605:
+/***/ 501:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 
 
 if (true) {
-  module.exports = __webpack_require__(298);
+  module.exports = __webpack_require__(349);
 } else {}
 
 
@@ -318,7 +318,7 @@ function _objectWithoutProperties(source, excluded) {
 var external_root_React_commonjs2_react_commonjs_react_amd_react_ = __webpack_require__(787);
 var external_root_React_commonjs2_react_commonjs_react_amd_react_default = /*#__PURE__*/__webpack_require__.n(external_root_React_commonjs2_react_commonjs_react_amd_react_);
 // EXTERNAL MODULE: ../node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(605);
+var jsx_runtime = __webpack_require__(501);
 ;// CONCATENATED MODULE: ./src/Layout.tsx
 var _excluded=["prefixCls","className","hasSider","children"];var LayoutContext=/*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default().createContext({addSider:function addSider(){return null;},removeSider:function removeSider(){return null;}});var Layout=/*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default().forwardRef(function(props,ref){var _props$prefixCls=props.prefixCls,prefixCls=_props$prefixCls===void 0?'w-layout':_props$prefixCls,className=props.className,hasSider=props.hasSider,children=props.children,other=_objectWithoutProperties(props,_excluded);var _useState=(0,external_root_React_commonjs2_react_commonjs_react_amd_react_.useState)([]),_useState2=_slicedToArray(_useState,2),siders=_useState2[0],setSiders=_useState2[1];var addSider=function addSider(id){setSiders(function(state){return[].concat(_toConsumableArray(state),[id]);});};var removeSider=function removeSider(id){setSiders(function(state){return _toConsumableArray(state.filter(function(currentId){return currentId!==id;}));});};var cls=[prefixCls,className,typeof hasSider==='boolean'&&hasSider||siders.length>0?"".concat(prefixCls,"-has-sider"):null].filter(Boolean).join(' ').trim();return/*#__PURE__*/(0,jsx_runtime.jsx)(LayoutContext.Provider,{value:{addSider:addSider,removeSider:removeSider},children:/*#__PURE__*/(0,jsx_runtime.jsx)("section",_objectSpread2(_objectSpread2({ref:ref,className:cls},other),{},{children:children}))});});Layout.displayName='Layout';/* harmony default export */ const src_Layout = (Layout);
 ;// CONCATENATED MODULE: ./src/Header.tsx
