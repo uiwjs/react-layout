@@ -3,7 +3,7 @@
   "scripts": {
     "⬇️⬇️⬇️⬇️⬇️ package ⬇️⬇️⬇️⬇️⬇️": "▼▼▼▼▼ package ▼▼▼▼▼",
     "watch": "lerna exec --scope @uiw/react-layout -- tsbb watch \"src/*.{ts,tsx}\" --use-babel --cjs cjs & npm run css:watch",
-    "build": "lerna exec --scope @uiw/react-layout -- tsbb build \"src/*.{ts,tsx}\" --use-babel --cjs cjs && npm run css:build:dist",
+    "build": "lerna exec --scope @uiw/react-layout -- tsbb build \"src/*.{ts,tsx}\" --use-babel --cjs cjs && npm run css:build && npm run css:build:dist",
     "css:build": "lerna exec --scope @uiw/react-layout -- compile-less -d src -o esm",
     "css:watch": "lerna exec --scope @uiw/react-layout -- compile-less -d src -o esm --watch",
     "css:build:dist": "lerna exec --scope @uiw/react-layout -- compile-less -d src -o lib --combine=dist.css",
